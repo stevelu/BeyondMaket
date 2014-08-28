@@ -72,7 +72,9 @@ public class ForGetList extends HttpServlet {
          }
          //end
          
-        RequestDispatcher rd = request.getRequestDispatcher("category/category.jsp");           
+        //RequestDispatcher rd = request.getRequestDispatcher("index.jsp"); 
+         RequestDispatcher rd = request.getRequestDispatcher("category/category.jsp"); 
+         
         request.setAttribute("cate",cate.getList());//存值  
         rd.forward(request,response);
 

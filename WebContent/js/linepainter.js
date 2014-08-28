@@ -1,0 +1,5 @@
+function linePainter(aa){this.options=aa;}
+linePainter.prototype={initialize:function(ba){ba.options=this.options;},getDataLength:function(){return this.options.getDataLength.call(this);},getX:function(i){return i*(this.options.region.width/(this.options.maxDotsCount-1));},start:function(){var ca=this.ctx;var da=this.options;var ea=da.region;ca.save();ca.translate(ea.x,ea.y+ea.height/2);var fa=0;var me=this;if(da.calcMaxDiff){for(var i=0;i<this.data.items.length;i++){var ga=this.data.items[i];var ha=Math.abs(da.middleValue-da.getItemValue(ga));fa=Math.max(ha,fa);}
+this.maxDiff=fa;}
+ca.beginPath();ca.strokeStyle=da.lineColor;ca.lineWidth=da.lineWidth||1;},end:function(){this.ctx.stroke();this.ctx.restore();},getY:function(i){var ia=this.options;var ja=ia.getItemValue(this.data.items[i])-ia.middleValue;return 0-ja*ia.region.height / 2 / this.maxDiff;},paintItem:function(i,x,y){var ka=this.ctx;if(i==0){ka.moveTo(x,y);}
+else{ka.lineTo(x,y);}}};
