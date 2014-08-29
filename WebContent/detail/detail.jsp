@@ -19,55 +19,7 @@
     <div style="-ms-transform-origin: 0px 0px; -ms-transform: translate(0px, 0px);" id="scroller" class="scroller">
     <div id="list" class="list">
     
- <!--    LEFT -->
-   <%--  <div id="list_left_tab" style="float:left;position:relative;">
-<table cellpadding="0" cellspacing="0" border="0" style="float:left;position:relative;">
-<tbody>
-<tr>
-<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
-<div id="list_head_Name" style="height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);" onclick="SortChange('Name','list_head_Name')">qihuo</div>
-</td>
-</tr>
-
- <%    if(request.getAttribute("cate")!=null)
- {
-	//category category=new category();
-	//category=(category)request.getAttribute("cate");
-	List<String[]> cateList=(List<String[]>)request.getAttribute("cate");
-	String [] data=new String [14];
-	String name=null;
-	String code=null;
-	int num=0;
-	for(int i=0;i< cateList.size()-1;i++)
-	{
-		data=cateList.get(i);
-		name=data[2];
-		code=data[0];
-		num=i+1;
-		
-	
-	%>
-	<tr>
-	
-	<td id="list_Gp_<%=num%>_Name_td"  style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background:rgb(16,20,25);" onclick="GotoGgHQ('<%=code %>','47','<%=name %>')">
-	<div style="font-size:16px;">
-	<span id="list_Gp_<%=num%>_Name" style="height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);"><%=name %></span>
-	</div>
-	<div style="font-size:12px;">
-	<span id="list_Gp_<%=num%>_Code" style="height:13px;line-height:13px;padding:1px;display:-moz-inline-box;display:inline-block;color:rgb(138,141,148);"><%=code %></span>
-	</div>
-	</td>
-	 </tr>
-	
-	
-<%
-	}
-}
-	 %> 
-	
-	 </tbody>
-</table>
-</div> --%>
+ 
  <!--    RIGHT -->
   <!--    RIGHT -->
  <!--    RIGHT -->
@@ -79,14 +31,14 @@
 	<!-- add by beyond -->
 	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
 	<div id="list_head_Now" onclick="SortChange('Now','list_head_Now')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-	<span style="display:-moz-inline-box;display:inline-block;">股指期货</span>
+	<span style="display:-moz-inline-box;display:inline-block;">时间</span>
 	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
 	</div>
 	</td>
 	<!-- add by beyond -->
 	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
 	<div id="list_head_Now" onclick="SortChange('Now','list_head_Now')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-	<span style="display:-moz-inline-box;display:inline-block;">昨结</span>
+	<span style="display:-moz-inline-box;display:inline-block;">现价</span>
 	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
 	</div>
 	</td>
@@ -119,45 +71,17 @@
 	<span style="display:-moz-inline-box;display:inline-block;">总量</span>
 	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
 	</div></td>
-	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
-	<div id="list_head_Lb" onclick="SortChange('Lb','list_head_Lb')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-	<span style="display:-moz-inline-box;display:inline-block;">量比</span>
-	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
-	</div></td>
-	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
-	<div id="list_head_Open" onclick="SortChange('Open','list_head_Open')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-	<span style="display:-moz-inline-box;display:inline-block;">前持仓量</span>
-	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
-	</div>
-	</td>
-	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
-	<div id="list_head_Max" onclick="SortChange('Max','list_head_Max')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-	<span style="display:-moz-inline-box;display:inline-block;">持仓量</span>
-	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
-	</div>
-	</td>
-	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
-	<div id="list_head_Min" onclick="SortChange('Min','list_head_Min')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-	<span style="display:-moz-inline-box;display:inline-block;">结算价</span>
-	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
-	</div>
-	</td>
-	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
-	<div id="list_head_Close" onclick="SortChange('Close','list_head_Close')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-	<span style="display:-moz-inline-box;display:inline-block;">XSFLAG</span>
-	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
-	</div>
-	</td>
+	
 	</tr>
 	<!--    TITLE -->
 	
 	
-	 <%    if(request.getAttribute("cate")!=null)
+	 <%    if(request.getAttribute("tickk")!=null)
 	 {
 		//category category=new category();
 		//category=(category)request.getAttribute("cate");
-		List<String[]> cateList=(List<String[]>)request.getAttribute("cate");
-		String [] data=new String [14];
+		List<String[]> cateList=(List<String[]>)request.getAttribute("tickk");
+		String [] data=new String [7];
 		String name=null;
 		String code=null;
 		int num=0;
@@ -168,14 +92,14 @@
 			code=data[0];
 			num=i+1;
 			%><tr><%
-			for (int j=0;j<11;j++)
+			for (int j=0;j<7;j++)
 			{
 			
 		
 					%>
 				<td id="list_Gp_<%=num %>_<%=j+1 %>" onclick="GotoGgHQ('<%=code %>','47','<%=name %>')" style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background:rgb(16,20,25);">
 				<div style="float:right;position:relative;font-size:16px;">
-				<span id="list_Gp_<%=num %>_<%=j+1 %>" style="height: 20px; line-height: 20px; padding: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; display: inline-block; color: rgb(255, 61, 1); border: 0px;"><%= data[j+2] %></span>
+				<span id="list_Gp_<%=num %>_<%=j+1 %>" style="height: 20px; line-height: 20px; padding: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; display: inline-block; color: rgb(255, 61, 1); border: 0px;"><%= data[j] %></span>
 				</div>
 				</td>
 				<%

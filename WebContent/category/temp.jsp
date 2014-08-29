@@ -19,5 +19,15 @@ function loadData()
 	myForm.method = "post";
 	myForm.submit();
 	}
+function GotoGgHQ(){
+	
+	var myForm = document.createElement("form");
+	myForm.method = "get";
+	myForm.action ="../ForGetData";
+	document.body.appendChild(myForm);
+	myForm.submit();	
+	document.body.removeChild(myForm);
+}
+
 </script> 
 </html>
