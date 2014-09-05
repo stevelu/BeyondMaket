@@ -13,6 +13,7 @@
     <script type="text/javascript" src="js/CreateTabMob.js"></script>
     <script type="text/javascript" src="js/tools.js"></script>
     <script type="text/javascript" src="category/category.js"></script>
+        <script type="text/javascript" src="detail/detail.js"></script>
 </head>
 <body style="background: none repeat scroll 0% 0% rgb(16, 20, 25); color: rgb(255, 255, 255);">
     <div style=" overflow: hidden;" id="wrapper" class="wrapper">
@@ -23,7 +24,8 @@
  <!--    RIGHT -->
   <!--    RIGHT -->
  <!--    RIGHT -->
- <div id="list_right_tab" style="float: left; position: relative; overflow: hidden; width: 1180px; height: 779px;">
+<!--  <div id="list_right_tab" style="float: left; position: relative; overflow: hidden; width: 1180px; height: 779px;"> -->
+ <div id="list_right_tab">
 	<table cellpadding="0" cellspacing="0" border="0" id="list_pull_tab" style="float: left; position: relative; width: 1180px; transition-property: transform; transform-origin: 0px 0px 0px; transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1); transform: translate(0px, 0px) scale(1) translateZ(0px); transition-duration: 0ms;">
 	<tbody>
 	 <!--    TITLE -->
@@ -81,6 +83,8 @@
 		//category category=new category();
 		//category=(category)request.getAttribute("cate");
 		List<String[]> cateList=(List<String[]>)request.getAttribute("tickk");
+		String[] head =(String[])request.getAttribute("listHead");
+		String tickJson =(String)request.getAttribute("tickJson");
 		String [] data=new String [7];
 		String name=null;
 		String code=null;
@@ -104,13 +108,27 @@
 				</td>
 				<%
 			}
-			%></tr><%
-		}
-	 }
+			%>
+							<td id="list_Gp_" onclick= "change(-2,47)"  style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background:rgb(16,20,25);">
+				<div style="float:right;position:relative;font-size:16px;">
+
+				<input type="hidden" name="head" id="head" value=<%=head%>>
+				<span id="list_Gp_" style="height: 20px; line-height: 20px; padding: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; display: inline-block; color: rgb(255, 61, 1); border: 0px;">
+				<a   id="test<%=num %>" target="_blank"> test</a></</span>
+				</div>
+				</td>
+			
+			</tr>
+			
+			<%
+		}%>
+		<%-- <input   name="tickJson" id="tickJson" value="<%=tickJson %>"> --%>
+		<a id="tickJson123">"<%=tickJson %>"</a>
+	<% }
 	%>
 	
 	
-	
+
 	
 	</tbody>
 	</table>
@@ -124,8 +142,12 @@
  
     </div>
     
+    <div style="top: 792px;" id="bottom_pull" class="bottom_pull"><span id="bottom_icon" class="up_icon">&nbsp;</span><span id="bottom_text" class="pull_text">上拉加载更多</span></div>
+    
     
     </div>
     </div>
+
+
 </body>
 </html>

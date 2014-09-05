@@ -36,6 +36,7 @@
     <iframe style="height: 937px; display: none;" id="contentZx" class="contentZx" src="unitZxkj/unitZxkj.html"></iframe>
     <iframe style="height: 937px; display: none;" id="contentKz" class="contentKz" src="unitKzkj/unitKzkj.html"></iframe>
     <div style="border-color: rgb(40, 43, 50); color: rgb(138, 141, 148); background-image: none; background-color: rgb(40, 43, 50);" id="footer" class="footer">
+    <a href="https://www.upyun.com/"><img src="http://upfiles.b0.upaiyun.com/logo/90x45.png" alt="UPYUN"></a>
 	    <!-- <div style="width: 450px; background-image: none;" id="foot1"><img src="images/btn_bottombar_zxg.png"><img style="display: none;" src="images/btn_bottombar_zxg_p.png"><br><span>自选</span>
 	    </div>
 	    <div style="width: 450px; background-image: none;" id="foot2" class="foot_curr"><img style="display: none;" src="images/btn_bottombar_ph.png"><img src="images/btn_bottombar_ph_p.png"><br><span>市场</span>
