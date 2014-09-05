@@ -103,7 +103,7 @@
 					%>
 				<td id="list_Gp_<%=num %>_<%=j+1 %>" onclick="GotoGgHQ('<%=code %>','47','<%=name %>')" style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background:rgb(16,20,25);">
 				<div style="float:right;position:relative;font-size:16px;">
-				<span id="list_Gp_<%=num %>_<%=j+1 %>" style="height: 20px; line-height: 20px; padding: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; display: inline-block; color: rgb(255, 61, 1); border: 0px;"><%= data[j] %></span>
+				<span id="list_data_<%=num %>_<%=j+1 %>" style="height: 20px; line-height: 20px; padding: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; display: inline-block; color: rgb(255, 61, 1); border: 0px;"><%= data[j] %></span>
 				</div>
 				</td>
 				<%
