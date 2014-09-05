@@ -15,7 +15,7 @@
     <script type="text/javascript" src="category/category.js"></script>
         <script type="text/javascript" src="detail/detail.js"></script>
 </head>
-<body style="background: none repeat scroll 0% 0% rgb(16, 20, 25); color: rgb(255, 255, 255);">
+<body style="background: none repeat scroll 0% 0% rgb(16, 20, 25); color: rgb(255, 255, 255);" onload="pushData()">
     <div style=" overflow: hidden;" id="wrapper" class="wrapper">
     <div style="-ms-transform-origin: 0px 0px; -ms-transform: translate(0px, 0px);" id="scroller" class="scroller">
     <div id="list" class="list">
@@ -33,46 +33,36 @@
 	<!-- add by beyond -->
 	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
 	<div id="list_head_Now" onclick="SortChange('Now','list_head_Now')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-	<span style="display:-moz-inline-box;display:inline-block;">时间</span>
+	<span style="display:-moz-inline-box;display:inline-block;">shijian</span>
 	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
 	</div>
 	</td>
 	<!-- add by beyond -->
 	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
 	<div id="list_head_Now" onclick="SortChange('Now','list_head_Now')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-	<span style="display:-moz-inline-box;display:inline-block;">现价</span>
+	<span style="display:-moz-inline-box;display:inline-block;">jiage</span>
 	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
 	</div>
 	</td>
 	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
 	<div id="list_head_Gains" onclick="SortChange('Gains','list_head_Gains')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-	<span style="display:-moz-inline-box;display:inline-block;">今开</span>
+	<span style="display:-moz-inline-box;display:inline-block;">xianlian</span>
 	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
 	</div>
 	</td>
 	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
 	<div id="list_head_Volume" onclick="SortChange('Volume','list_head_Volume')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-	<span style="display:-moz-inline-box;display:inline-block;">最高</span>
+	<span style="display:-moz-inline-box;display:inline-block;">zengcang</span>
 	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
 	</div>
 	</td>
 	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
 	<div id="list_head_Ccl" onclick="SortChange('Ccl','list_head_Ccl')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-	<span style="display:-moz-inline-box;display:inline-block;">最低</span>
+	<span style="display:-moz-inline-box;display:inline-block;">xingzhi</span>
 	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
 	</div>
 	</td>
-	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
-	<div id="list_head_Cc" onclick="SortChange('Cc','list_head_Cc')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-	<span style="display:-moz-inline-box;display:inline-block;">现价</span>
-	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
-	</div>
-	</td>
-	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
-	<div id="list_head_Jsj" onclick="SortChange('Jsj','list_head_Jsj')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-	<span style="display:-moz-inline-box;display:inline-block;">总量</span>
-	<span style="display: none; color: rgb(255, 61, 1);">↓</span>
-	</div></td>
+
 	
 	</tr>
 	<!--    TITLE -->
@@ -96,7 +86,7 @@
 			code=data[0];
 			num=i+1;
 			%><tr><%
-			for (int j=0;j<7;j++)
+			for (int j=0;j<5;j++)
 			{
 			
 		
@@ -109,21 +99,14 @@
 				<%
 			}
 			%>
-							<td id="list_Gp_" onclick= "change(-2,47)"  style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background:rgb(16,20,25);">
-				<div style="float:right;position:relative;font-size:16px;">
 
-				<input type="hidden" name="head" id="head" value=<%=head%>>
-				<span id="list_Gp_" style="height: 20px; line-height: 20px; padding: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; display: inline-block; color: rgb(255, 61, 1); border: 0px;">
-				<a   id="test<%=num %>" target="_blank"> test</a></</span>
-				</div>
-				</td>
 			
 			</tr>
 			
 			<%
 		}%>
-		<%-- <input   name="tickJson" id="tickJson" value="<%=tickJson %>"> --%>
-		<a id="tickJson123">"<%=tickJson %>"</a>
+		
+		<a type="hidden" style=" display: none;" id="tickJson123">"<%=tickJson %>"</a>
 	<% }
 	%>
 	

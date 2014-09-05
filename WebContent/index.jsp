@@ -19,7 +19,7 @@
 			<div style="display: none;" id="backbtn" class="backbtn2"></div>
 	    </div>
 	    <div class="narrowhead">&nbsp;</div>
-	    <div id="topic" class="widehead">股指</div>
+	    <div id="topic" class="widehead">test</div>
 	    <!-- <div class="narrowhead">&nbsp;<img id="refrbtn" class="refrbtn" src="images/refresh.png"></div>
 	    <div class="narrowhead"><img style="display: none;" id="refrbtn2" class="refrbtn" src="images/refresh.png"><img id="search" class="search" src="images/search.png">
 	    </div> -->
