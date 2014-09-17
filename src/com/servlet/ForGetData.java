@@ -58,7 +58,8 @@ public class ForGetData extends HttpServlet {
 
 		String AttCode= (String) request.getParameter("code");
 		String AttScode=(String)request.getParameter("Scode");
-		String AttName=(String)request.getParameter("name");
+		//String AttName=(String)request.getParameter("name");
+		String AttName=new String(request.getParameter("name").getBytes("ISO-8859-1"),"utf-8");
 		
 
 		//String apiUrl = "http://119.97.185.7:7615/TQLEX?Entry=HQServ.Tick"; 
@@ -86,7 +87,7 @@ public class ForGetData extends HttpServlet {
         
         request.setAttribute("tickk",data);//存值  
         request.setAttribute("tickJson",str);
-       // request.setAttribute("name",AttName);
+        request.setAttribute("name",AttName);
 
         rd.forward(request,response);
 	}

@@ -20,13 +20,73 @@
     <div style="-ms-transform-origin: 0px 0px; -ms-transform: translate(0px, 0px);" id="scroller" class="scroller">
     <div id="list" class="list">
     
- 
+    <!-- left -->
+    <div id="list_left_tab">
+    <%String AttName =(String)request.getAttribute("name"); %>
+    
+    <table cellpadding="0" cellspacing="0" border="0" id="list_pull_tab" style="float: left; position: relative; width: 200px; transition-property: transform; transform-origin: 0px 0px 0px; transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1); transform: translate(0px, 0px) scale(1) translateZ(0px); transition-duration: 0ms;">
+    <tr>
+    <td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
+	<div id="list_head_left"  style="float:left;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
+	<span style="display:-moz-inline-box;display:inline-block;"><%=AttName %></span>
+	</div>
+	</td>
+	</tr>
+	
+	
+	<tr>
+	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
+<form action="" method="post" name="xinxi"  >
+组别：<select name="zu" >
+
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="20">20</option>
+     <option value="50">50</option>
+  <option value="100">100</option>
+      </select>
+	</form>
+	</td>
+	</tr>
+	
+	
+	
+	<tr>
+	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
+<form action="" method="post" name="xinxi"  enctype="multipart/form-data" >
+<ul>
+<li>
+组别：<select name="zu" >
+
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="20">20</option>
+     <option value="50">50</option>
+  <option value="100">100</option>
+      </select>
+      </li>
+      <li>
+      <input name="min" />
+      </li>
+      <li>
+      <input name="max" />
+	   </li>
+	   <li>
+      <input type="submit" />
+	   </li>
+	   </ul>
+	   </form>
+	</td>
+</tr>
+</table>
+ </div>
+
  <!--    RIGHT -->
   <!--    RIGHT -->
  <!--    RIGHT -->
 <!--  <div id="list_right_tab" style="float: left; position: relative; overflow: hidden; width: 1180px; height: 779px;"> -->
- <div id="list_right_tab">
-	<table cellpadding="0" cellspacing="0" border="0" id="list_pull_tab" style="float: left; position: relative; width: 1180px; transition-property: transform; transform-origin: 0px 0px 0px; transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1); transform: translate(0px, 0px) scale(1) translateZ(0px); transition-duration: 0ms;">
+ <div id="list_right_tab" style="float: left; position: relative;  width: 1000px; ">
+	<table cellpadding="0" cellspacing="0" border="0" id="list_pull_tab" style="float: left; position: relative; width: 1000px; transition-property: transform; transform-origin: 0px 0px 0px; transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1); transform: translate(0px, 0px) scale(1) translateZ(0px); transition-duration: 0ms;">
 	<tbody>
 	 <!--    TITLE -->
 	<tr>
