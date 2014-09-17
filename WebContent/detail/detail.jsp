@@ -75,6 +75,7 @@
 		List<String[]> cateList=(List<String[]>)request.getAttribute("tickk");
 		String[] head =(String[])request.getAttribute("listHead");
 		String tickJson =(String)request.getAttribute("tickJson");
+		//String AttName =(String)request.getAttribute("AttName");
 		String [] data=new String [7];
 		String name=null;
 		String code=null;
@@ -125,7 +126,7 @@
  
     </div>
     
-    <div style="top: 792px;" id="bottom_pull" class="bottom_pull"><span id="bottom_icon" class="up_icon">&nbsp;</span><span id="bottom_text" class="pull_text">上拉加载更多</span></div>
+<!--     <div style="top: 792px;" id="bottom_pull" class="bottom_pull"><span id="bottom_icon" class="up_icon">&nbsp;</span><span id="bottom_text" class="pull_text">上拉加载更多</span></div> -->
     
     
     </div>
