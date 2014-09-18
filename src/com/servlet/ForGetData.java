@@ -55,18 +55,17 @@ public class ForGetData extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
-		String AttCode= (String) request.getParameter("code");
-		String AttScode=(String)request.getParameter("Scode");
-		//String AttName=(String)request.getParameter("name");
+		String task= (String) request.getParameter("task");
+        String AttCode= (String) request.getParameter("code");
 		String AttName=new String(request.getParameter("name").getBytes("ISO-8859-1"),"utf-8");
-		
+
 
 		//String apiUrl = "http://119.97.185.7:7615/TQLEX?Entry=HQServ.Tick"; 
 		//String para="{\"Code\":\"IF1409\",\"Setcode\":47,\"Date\":0704,\"Startxh\":-1,\"WantNum\":10,\"HasAttachInfo\":1,\"ExHQFlag\":1,\"CharSet\":\"\"}";
 		String apiUrl = "http://119.97.185.7:7615/TQLEX?Entry=HQServ.Tick"; 
 		//String para="{\"Code\":\"IF1412\",\"Setcode\":47,\"Date\":0,\"Startxh\":0,\"WantNum\":1000,\"HasAttachInfo\":1,\"ExHQFlag\":1,\"CharSet\":\"\"}";
-		String para="{\"Code\":\""+AttCode+"\",\"Setcode\":47,\"Date\":0,\"Startxh\":0,\"WantNum\":1000,\"HasAttachInfo\":1,\"ExHQFlag\":1,\"CharSet\":\"\"}";
+		String para="{\"Code\":\""+AttCode+"\",\"Setcode\":47,\"Date\":0,\"Startxh\":0,\"WantNum\":10,\"HasAttachInfo\":1,\"ExHQFlag\":1,\"CharSet\":\"\"}";
+		
 		URLConnectionHelper helper=new URLConnectionHelper();
 		String str =helper.sendPost(apiUrl, para);
 		Gson gson=new Gson();
@@ -74,7 +73,36 @@ public class ForGetData extends HttpServlet {
 		tickk=gson.fromJson(str, tick.class);
 		
 		filterData filter=new filterData();
-		List<String[]> data =filter.filterDetail(tickk.getList());
+		List<String[]> data =new ArrayList();
+
+		if(task!=null)
+		{
+			if(task.equals("initialize"))
+			{	
+				data =tickk.getList();
+			}
+			if(task.equals("now"))
+			{
+				String max= (String) request.getParameter("max");
+				data =filter.filterDetail(tickk.getList(),max);
+				
+			}
+			if(task.equals("kind"))
+			{
+				String kind= (String) request.getParameter("kind");
+				String min= (String) request.getParameter("min");
+				String max= (String) request.getParameter("max");
+				data =filter.filterDetail(tickk.getList(),kind,min,max);
+				
+			}
+		}
+		
+		tickk.setList(data);
+		String ProStr=gson.toJson( tickk);
+
+
+
+
 		String[] head =tickk.getListHead();
 		//TODO transfrom 
         // RequestDispatcher rd = request.getRequestDispatcher("index.jsp");  
@@ -86,8 +114,10 @@ public class ForGetData extends HttpServlet {
 		str=str.substring(1, str.length());
         
         request.setAttribute("tickk",data);//存值  
-        request.setAttribute("tickJson",str);
+        request.setAttribute("tickJson",ProStr);
         request.setAttribute("name",AttName);
+        request.setAttribute("code",AttCode);
+        
 
         rd.forward(request,response);
 	}

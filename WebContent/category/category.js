@@ -3,7 +3,7 @@
  */
 function GotoGgHQ(hb,ib,jb){
 	
-	var map=[{"name":"code","value":hb},{"name":"Scode","value":ib},{"name":"name","value":jb}];
+	var map=[{"name":"task","value":"initialize"},{"name":"code","value":hb},{"name":"Scode","value":ib},{"name":"name","value":jb}];
 	postwith("./ForGetData",map);
 	
 	}

@@ -22,7 +22,9 @@
     
     <!-- left -->
     <div id="list_left_tab">
-    <%String AttName =(String)request.getAttribute("name"); %>
+    <%String AttName =(String)request.getAttribute("name");
+    String AttCode =(String)request.getAttribute("code");
+    %>
     
     <table cellpadding="0" cellspacing="0" border="0" id="list_pull_tab" style="float: left; position: relative; width: 200px; transition-property: transform; transform-origin: 0px 0px 0px; transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1); transform: translate(0px, 0px) scale(1) translateZ(0px); transition-duration: 0ms;">
     <tr>
@@ -34,10 +36,16 @@
 	</tr>
 	
 	
+   <tr>
+   <td>
+    <span style="display:-moz-inline-box;display:inline-block;">现量过滤：</span>
+    </td>
+   </tr>
+	
 	<tr>
 	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
-<form action="" method="post" name="xinxi"  >
-组别：<select name="zu" >
+<form action="./ForGetData" method="post" name="select"  >
+现量：<select name="max" >
 
   <option value="5">5</option>
   <option value="10">10</option>
@@ -45,31 +53,39 @@
      <option value="50">50</option>
   <option value="100">100</option>
       </select>
+      <input name="task"  style="display:none;" value="now"/>
+      <input name="code"  style="display:none;" value="<%=AttCode%>"/>
+       <input name="name"  style="display:none;" value="<%=AttName%>"/>
+             <input type="submit" />
 	</form>
 	</td>
 	</tr>
 	
-	
+	    <tr>
+	    <td>
+    <span style="display:-moz-inline-box;display:inline-block;">过滤：</span>
+   </td>
+   </tr>
 	
 	<tr>
 	<td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
-<form action="" method="post" name="xinxi"  enctype="multipart/form-data" >
+<form action="./ForGetData" method="post" name=""  enctype="multipart/form-data" >
 <ul>
 <li>
-组别：<select name="zu" >
+类型：<select name="kind" >
 
-  <option value="5">5</option>
-  <option value="10">10</option>
-  <option value="20">20</option>
-     <option value="50">50</option>
-  <option value="100">100</option>
+  <option value="1">现量</option>
+  <option value="2">增仓</option>
       </select>
+       <input name="task"  style="display:none;" value="kind"/>
+            <input name="code"  style="display:none;" value="<%=AttCode%>"/>
+            <input name="name"  style="display:none;" value="<%=AttName%>"/>
       </li>
       <li>
-      <input name="min" />
+      最小：<input name="min" />
       </li>
       <li>
-      <input name="max" />
+      最大：<input name="max" />
 	   </li>
 	   <li>
       <input type="submit" />
