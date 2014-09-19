@@ -90,9 +90,13 @@ public class ForGetData extends HttpServlet {
 			if(task.equals("kind"))
 			{
 				String kind= (String) request.getParameter("kind");
+				String filterValue= (String) request.getParameter("filter");
 				String min= (String) request.getParameter("min");
 				String max= (String) request.getParameter("max");
-				data =filter.filterDetail(tickk.getList(),kind,min,max);
+
+				data =filter.filterDetail(tickk.getList(),filterValue,min,max);
+				request.setAttribute("kind",kind);
+				
 				
 			}
 		}

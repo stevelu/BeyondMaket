@@ -46,8 +46,10 @@ function change(Qc,Tc)
 function pushData()
 {
 	var x=document.getElementById("tickJson123");
+	var y=document.getElementById("kind123");
 	//alert(x.innerHTML)
     var data=x.innerHTML;
+    var kind=y.innerHTML;
 	
 	data=data.substring(0,data.length-1);
 	data=data.substring(1,data.length);
@@ -61,11 +63,27 @@ function pushData()
 	 	var tmpArr = new Array();
 	 	var idName;
 	 	tmpArr = arr[i];
-	 	for(j=0;j<dataHead.length;j++){
-			var tmp = tmpArr[dataHead[j]];
-			idName='list_data_'+(i+1)+'_'+(j+1);
-			document.getElementById(idName).innerHTML=	tmp;		 
-	 	}
+	 	if(kind.indexOf("null")==-1 && kind!="" && kind!="no")
+	 		{
+	 		    if(tmpArr["InOutFlag"].indexOf(kind)!=-1)
+	 		    	{
+					 	for(j=0;j<dataHead.length;j++){
+							var tmp = tmpArr[dataHead[j]];
+							idName='list_data_'+(i+1)+'_'+(j+1);
+							document.getElementById(idName).innerHTML=	tmp;		 
+					 	}	 		    	
+	 		    	}	 		
+	 		}
+	 	else
+	 		{
+	 		for(j=0;j<dataHead.length;j++){
+				var tmp = tmpArr[dataHead[j]];
+				idName='list_data_'+(i+1)+'_'+(j+1);
+				document.getElementById(idName).innerHTML=	tmp;		 
+		 	}	 
+	 		
+	 		}
+
 	}
 	
 }
