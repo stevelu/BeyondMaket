@@ -89,14 +89,16 @@ public class ForGetData extends HttpServlet {
 			}
 			if(task.equals("kind"))
 			{
-				String kind= (String) request.getParameter("kind");
+				//String kind= (String) request.getParameter("kind");
+				String kind=new String(request.getParameter("kind").getBytes("ISO-8859-1"),"utf-8");
 				String filterValue= (String) request.getParameter("filter");
 				String min= (String) request.getParameter("min");
 				String max= (String) request.getParameter("max");
 
 				data =filter.filterDetail(tickk.getList(),filterValue,min,max);
+				//request.setAttribute("kind",kind);
+
 				request.setAttribute("kind",kind);
-				
 				
 			}
 		}

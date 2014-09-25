@@ -50,6 +50,9 @@ function pushData()
 	//alert(x.innerHTML)
     var data=x.innerHTML;
     var kind=y.innerHTML;
+    
+    kind=kind.substring(0,kind.length-1);
+    kind=kind.substring(1,kind.length);
 	
 	data=data.substring(0,data.length-1);
 	data=data.substring(1,data.length);
@@ -62,17 +65,25 @@ function pushData()
 	for(i=0;i<arr.length;i++){
 	 	var tmpArr = new Array();
 	 	var idName;
+	 	var tdName;
 	 	tmpArr = arr[i];
 	 	if(kind.indexOf("null")==-1 && kind!="" && kind!="no")
 	 		{
-	 		    if(tmpArr["InOutFlag"].indexOf(kind)!=-1)
-	 		    	{
-					 	for(j=0;j<dataHead.length;j++){
-							var tmp = tmpArr[dataHead[j]];
-							idName='list_data_'+(i+1)+'_'+(j+1);
-							document.getElementById(idName).innerHTML=	tmp;		 
-					 	}	 		    	
-	 		    	}	 		
+	 		    
+	 		    	
+		 	for(j=0;j<dataHead.length;j++){
+		 		
+				var tmp = tmpArr[dataHead[j]];
+				idName='list_data_'+(i+1)+'_'+(j+1);
+				tdName='list_Gp_'+(i+1)+'_'+(j+1);
+				var span=document.getElementById(idName);
+				var div=document.getElementById(tdName);
+		 		if(tmpArr["InOutFlag"].indexOf(kind)!=-1)
+		 			span.innerHTML=	tmp;			 				 			
+		 		else
+		 			div.parentNode.removeChild(div);		 						 						 						 		 
+		 	}	 		    	
+	 		    		 		
 	 		}
 	 	else
 	 		{

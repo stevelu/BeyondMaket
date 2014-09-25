@@ -166,7 +166,8 @@
  		                            List<String[]> cateList=(List<String[]>)request.getAttribute("tickk");
                                     String[] head =(String[])request.getAttribute("listHead");
                                     String tickJson =(String)request.getAttribute("tickJson");
-                                    String kind =(String)request.getAttribute("kind");
+                                   String kind =(String)request.getAttribute("kind");
+                                   //String kind=new String(request.getParameter("kind").getBytes("ISO-8859-1"),"utf-8");
                                     //String AttName =(String)request.getAttribute("AttName");
                                     String [] data=new String [7];
                                     String name=null;
