@@ -24,6 +24,7 @@
                 <div id="list_left_tab">
                     <%String AttName =(String)request.getAttribute("name");
                     String AttCode =(String)request.getAttribute("code");
+                    String pageNum =(String)request.getAttribute("page");
                     %>
 
                     <table cellpadding="0" cellspacing="0" border="0" id="list_pull_tab" style="float: left; position: relative; width: 200px; transition-property: transform; transform-origin: 0px 0px 0px; transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1); transform: translate(0px, 0px) scale(1) translateZ(0px); transition-duration: 0ms;">
@@ -54,6 +55,7 @@
                                         <option value="100">100</option>
                                     </select>
                                     <input name="task" style="display:none;" value="now" />
+                                    <input name="page"  style="display:none;" value="<%=pageNum%>" />
                                     <input name="code" style="display:none;" value="<%=AttCode%>" />
                                     <input name="name" style="display:none;" value="<%=AttName%>" />
                                     <input type="submit" />
@@ -78,6 +80,7 @@
                                                 <option value="2">增仓</option>
                                             </select>
                                             <input name="task" style="display:none;" value="kind" />
+                                             <input name="page"  style="display:none;" value="<%=pageNum%>" />
                                             <input name="code" style="display:none;" value="<%=AttCode%>" />
                                             <input name="name" style="display:none;" value="<%=AttName%>" />
                                         </li>
@@ -108,6 +111,38 @@
                                             <input type="submit" />
                                         </li>
                                     </ul>
+                                </form>
+                            </td>
+                        </tr>
+                        
+         <!-- page -->               
+                        <tr>
+                            <td>
+                                <span style="display:-moz-inline-box;display:inline-block;">现量过滤：</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
+                                <form action="./ForGetData" method="post" name="page">
+                                    现量：<select name="max">
+
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                    <input name="task" style="display:none;" value="page" />
+                                    <input name="code" style="display:none;" value="<%=AttCode%>" />
+                                    <input name="name" style="display:none;" value="<%=AttName%>" />
+                                    <input type="submit" style="display:none;"/>
+                                    <input id="pageup" name="pageup" style="display:none;" value="non" />
+                                    <input id="pagedown" name="pagedown" style="display:none;" value="non" />
+                                    <input  name="buttonup" type="button" value="上一页" onclick="document.getElementById('pageup').value=0;document.forms['page'].submit();"/>
+                                    <input name="page"  value="<%=pageNum%>" />
+                                    <input  name="buttondown" type="button" value="下一页" onclick="document.getElementById('pagedown').value=0;document.forms['page'].submit();"/>
+                                    
                                 </form>
                             </td>
                         </tr>
@@ -184,7 +219,7 @@
                                         for (int j=0;j
                                         <5;j++) {
                                                 %>
-                                            <td id="list_Gp_<%=num %>_<%=j+1 %>" onclick="GotoGgHQ('<%=code %>','47','<%=name %>')" style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background:rgb(16,20,25);">
+                                            <td id="list_Gp_<%=num %>_<%=j+1 %>"  style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background:rgb(16,20,25);">
                                                 <div style="float:right;position:relative;font-size:16px;">
                                                     <span id="list_data_<%=num %>_<%=j+1 %>" style="height: 20px; line-height: 20px; padding: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; display: inline-block; color: rgb(255, 61, 1); border: 0px;"><%= data[j] %></span>
                                                 </div>
