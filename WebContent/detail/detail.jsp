@@ -118,21 +118,14 @@
          <!-- page -->               
                         <tr>
                             <td>
-                                <span style="display:-moz-inline-box;display:inline-block;">现量过滤：</span>
+                                <span style="display:-moz-inline-box;display:inline-block;">页码：</span>
                             </td>
                         </tr>
 
                         <tr>
                             <td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
                                 <form action="./ForGetData" method="post" name="page">
-                                    现量：<select name="max">
 
-                                        <option value="5">5</option>
-                                        <option value="10">10</option>
-                                        <option value="20">20</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
-                                    </select>
                                     <input name="task" style="display:none;" value="page" />
                                     <input name="code" style="display:none;" value="<%=AttCode%>" />
                                     <input name="name" style="display:none;" value="<%=AttName%>" />
@@ -161,32 +154,32 @@
                                 <!-- add by beyond -->
                                 <td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
                                     <div id="list_head_Now" onclick="SortChange('Now','list_head_Now')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-                                        <span style="display:-moz-inline-box;display:inline-block;">shijian</span>
+                                        <span style="display:-moz-inline-box;display:inline-block;">时间</span>
                                         <span style="display: none; color: rgb(255, 61, 1);">↓</span>
                                     </div>
                                 </td>
                                 <!-- add by beyond -->
                                 <td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
                                     <div id="list_head_Now" onclick="SortChange('Now','list_head_Now')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-                                        <span style="display:-moz-inline-box;display:inline-block;">jiage</span>
+                                        <span style="display:-moz-inline-box;display:inline-block;">价格</span>
                                         <span style="display: none; color: rgb(255, 61, 1);">↓</span>
                                     </div>
                                 </td>
                                 <td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
                                     <div id="list_head_Gains" onclick="SortChange('Gains','list_head_Gains')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-                                        <span style="display:-moz-inline-box;display:inline-block;">xianlian</span>
+                                        <span style="display:-moz-inline-box;display:inline-block;">现量</span>
                                         <span style="display: none; color: rgb(255, 61, 1);">↓</span>
                                     </div>
                                 </td>
                                 <td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
                                     <div id="list_head_Volume" onclick="SortChange('Volume','list_head_Volume')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-                                        <span style="display:-moz-inline-box;display:inline-block;">zengcang</span>
+                                        <span style="display:-moz-inline-box;display:inline-block;">增仓</span>
                                         <span style="display: none; color: rgb(255, 61, 1);">↓</span>
                                     </div>
                                 </td>
                                 <td style="white-space:nowrap;padding:0px 5px;height:40px;border-bottom:1px solid rgb(29,34,40);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgb(29,34,40)),to(rgb(29,34,40)));background-image:-moz-linear-gradient(rgb(29,34,40),rgb(29,34,40));background-image:-o-linear-gradient(rgb(29,34,40),rgb(29,34,40));">
                                     <div id="list_head_Ccl" onclick="SortChange('Ccl','list_head_Ccl')" style="float:right;position:relative;height:40px;line-height:40px;font-size:18px;color:rgb(255,255,255);">
-                                        <span style="display:-moz-inline-box;display:inline-block;">xingzhi</span>
+                                        <span style="display:-moz-inline-box;display:inline-block;">性质</span>
                                         <span style="display: none; color: rgb(255, 61, 1);">↓</span>
                                     </div>
                                 </td>
