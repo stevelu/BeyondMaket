@@ -45,7 +45,7 @@ public class ForGetList extends HttpServlet {
 
 		//String apiUrl = "http://119.97.185.7:7615/TQLEX?Entry=HQServ.Tick"; 
 		//String para="{\"Code\":\"IF1409\",\"Setcode\":47,\"Date\":0704,\"Startxh\":-1,\"WantNum\":10,\"HasAttachInfo\":1,\"ExHQFlag\":1,\"CharSet\":\"\"}";
-		String apiUrl = "http://119.97.185.7:7615/TQLEX?Entry=HQServ.MultiHQ"; 
+		String apiUrl = "http://119.97.185.12:7615/TQLEX?Entry=HQServ.MultiHQ"; 
 		String para="{\"WantCol\":[\"NOW\",\"VOL\",\"VolInStock\",\"PreVolInStock\",\"ClearPrice\",\"LB\",\"OPEN\",\"MAX\",\"MIN\",\"CLOSE\",\"XSFLAG\"],\"SetDomain\":47,\"SubCode\":\"\",\"ColType\":14,\"Startxh\":0,\"WantNum\":20,\"SortType\":0,\"ExHQFlag\":1,\"CharSet\":\"\"}";
 		URLConnectionHelper helper=new URLConnectionHelper();
 		String str =helper.sendPost(apiUrl, para);
