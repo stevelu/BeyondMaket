@@ -4,18 +4,16 @@
 	text-align: center;
 }
 
-.content div{
+.content div,.tick div{
 	width: 200px;
 	height: auto;
-	position: relative;
-}
-.content1{
-	height= 836px; 
-	display= none;
+	float: left;
+	margin: 10px;
+
 }
 
-
-table.arrange {
+.arrange ,.tick {
+	width:200px;
 	font-family: verdana,arial,sans-serif;
 	font-size:11px;
 	color:#333333;
@@ -23,23 +21,32 @@ table.arrange {
 	border-color: #999999;
 	border-collapse: collapse;
 }
-table.arrange th {
-	background-color:#c3dde0;
+.arrange th,.tick th {
+	background-color:#444444;
 	border-width: 1px;
 	padding: 8px;
 	border-style: solid;
 	border-color: #a9c6c9;
+	color:#F5F5F5;
 }
-table.arrange tr {
-	background-color:#d4e3e5;
+.arrange tr,.tick tr {
+	background-color:#888888;
 }
-table.arrange td {
+.arrange td ,.tick td {
 	border-width: 1px;
 	padding: 8px;
 	border-style: solid;
 	border-color: #a9c6c9;
+	color:#F5F5F5;
 }
 .hover {
 		background-color:#ffff66;
 }
 
+.detail{
+	display:none;
+}
+
+.secTitle{
+	rowSpan :3;
+}

@@ -29,4 +29,14 @@
     <servlet-name>ForGetList</servlet-name>
     <url-pattern>/ForGetList</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ArrangeServlet</display-name>
+    <servlet-name>ArrangeServlet</servlet-name>
+    <servlet-class>com.ago.servlet.ArrangeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArrangeServlet</servlet-name>
+    <url-pattern>/ArrangeServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,4 +1,4 @@
-package com.comment;
+package com.ago.util;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -20,11 +20,11 @@ public class Config
 		// String path = System.getProperty("user.dir") +"/init.properties";
 		// for windows
 		// String path = System.getProperty("user.dir") +"\\init.properties";
-		
+
 		String path = System.getProperty("user.dir") + "\\init.properties";
 		try
 		{
-			//in = Thread.currentThread().getContextClassLoader().getResourceAsStream(path);
+			// in = Thread.currentThread().getContextClassLoader().getResourceAsStream(path);
 			in = new FileInputStream(path);
 			props.load(in);
 
@@ -54,4 +54,3 @@ public class Config
 		return props.getProperty(name);
 	}
 }
-

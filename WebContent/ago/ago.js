@@ -14,12 +14,35 @@ function () {
 	
 	
     $(".arrange tr").mouseover(function () {
-    	$(this).css('background-color', '#ffff66');
+    	$(this).css('background-color', '#444444');
     });	
     
     $(".arrange tr").mouseout(function () {
-    	$(this).css('background-color', '#d4e3e5');
+    	$(this).css('background-color', '#888888');
     });
+    
+    $(".arrange tr").click(function () {
+    	var test=$(this).parent().val();
+    	$(".content").css('display','none');
+    	$(".detail").css('display','inline');
+
+    });
+    
+    $("#backArrange").click(function () {
+    	$(".detail").css('display','none');
+    	$(".content").css('display','inline');
+
+    });
+    
+    $("#yesterday").click(function () {
+        var url="./ArrangeServlet";
+        var para='{"num":"test","text":"test"}';
+        $.post(url,eval("(" + para + ")"),function(data){
+        	alter(data);        
+        	});  	
+        
+    });
+
 	
 	//chat
     function sendMessage() {
